@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>IFrame</title>
+	<style type="text/css">
+		table{
+			border: 5px;
+			width: 75%;
+			margin: auto;
+			text-align: center;
+
+			background: white;
+			color: white;
+
+		}
+		th{
+			background: white;
+			color: blue;
+			border: 5px;
+		}
+		td{
+			border:5px;
+		}
+		.iframe-container{
+			display: flex;
+			justify-content: center;
+			margin-top: 20px;
+		}
+
+	</style>
+</head>
+<body>
+	<h1 style="text-align: center;">El Sistema Solar</h1>
+	
+	<section>
+		<table>
+			<caption>
+				<thead>
+					<tr>
+						
+					</tr>
+
+				</thead>
+				<tbody>
+					
+					<tr>
+						
+						<!--<td><img src="IMG/sol.jpg" align="center" name="SOL"><td>
+						<td><img src="IMG/tierra.jpg" align="center" name="TIERRA"><td>
+							<td><img src="IMG/luna.jpg" align="center" name="LUNA"><td>
+								<td><img src="IMG/marte.jpg" align="center" name="MARTE" width="170"><td>
+						-->
+
+						 <td>
+            <a href="IMG/sol.jpg" target="FRAME">
+              <img src="IMG/sol.jpg" alt="Sol">
+            </a>
+          </td>
+          <td>
+            <a href="IMG/tierra.jpg" target="FRAME">
+              <img src="IMG/tierra.jpg" alt="Tierra">
+            </a>
+          </td>
+          <td>
+            <a href="IMG/luna.jpg" target="FRAME">
+              <img src="IMG/luna.jpg" alt="Luna">
+            </a>
+          </td>
+          <td>
+            <a href="IMG/marte.jpg" target="FRAME">
+              <img src="IMG/marte.jpg" alt="Marte" width="170">
+            </a>
+          </td>
+					</tr>
+				</tbody>
+			</caption>
+		</table>
+	</section>
+
+	<div class="iframe-container">
+	<iframe src=" " align="center" name="FRAME" width="300" height="250px"></iframe>
+	</div>
+
+
+</body>
+</html>
