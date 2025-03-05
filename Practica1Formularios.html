@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Formulario AUDI</title>
+	<style type="text/css">
+		body {
+            background: lightblue;
+            
+        }
+        table {
+            margin: auto; 
+            text-align: center;
+            
+        }
+        td, th {
+            padding: 10px; 
+        }
+        fieldset {
+           
+    
+            text-align: left; 
+        }
+        input, select {
+      
+            margin: 5px auto; 
+        }
+
+	</style>
+</head>
+<body>
+	<h1 style="text-align: center;">AUDI Potosi</h1>
+	<h2 style="text-align: center;">Compras Online</h2>
+	<form action="" method="post" enctype="text/plain">
+		<fieldset>
+			<legend>Informacion general del cliente</legend>
+			<table>
+				<thead>
+					
+				</thead>
+
+				<tbody>
+					<td>
+						<label for="nom">Nombre:</label>
+						<input type="text" name="nom" id="nom" placeholder="Nombre">
+
+						<label for="ape">Apellido Paterno:</label>
+						<input type="text" name="ape" id="ape" placeholder="Apellido Paterno">
+
+						<label for="ape1">Apellido Materno:</label>
+						<input type="text" name="ape1" id="ape1" placeholder="Apellido Materno"><br/>
+
+						<label for="nom1">Nombre de Usuario:</label>
+						<input type="text" name="nom1" id="nom1" placeholder="Nombre de Usuario">
+
+						<label for="pass">Nombre de Usuario:</label>
+						<input type="password" name="pass" id="pass" placeholder="Password">
+
+						<label for="fecha">Fecha de Registro:</label>
+						<input type="date" name="fecha" id="fecha" >
+					</td>
+				</tbody>
+			</table>
+		</fieldset>
+
+		<fieldset>
+			<legend>Datos para facturar</legend>
+			<table>
+				<thead>
+					<tr>
+
+					<th style="text-align: left;">País</th>
+					<th style="text-align: left;">Ciudad</th>
+					<th style="text-align: left;">Calle</th>
+					
+					</tr>
+					
+				</thead>
+
+				<tbody>
+					<td>
+						<label for="pais"></label>
+    				<select id="pais" name="pais" size="3">
+        			<option value="mexico">México</option>
+        			<option value="canada">Canadá</option>
+        			<option value="reino_unido">Reino Unido</option>
+        			<option value="españa">España</option>
+        			<option value="argentina">Argentina</option>
+        			<option value="colombia">Colombia</option>
+    				</select> 
+					</td>
+					<td>
+						
+					
+    				<label for="ciudad"></label>
+    				<select id="ciudad" name="ciudad" size="3">
+        			<option value="slp">San Luis Potosi</option>
+        			<option value="tamaulipas">Tamaulipas</option>
+        			<option value="nuevo_leon">Nuevo Leon</option>
+        			<option value="tijuana">Tijuana</option>
+        			<option value="guanajuato">Guanajuato</option>
+        			<option value="sinaloa">Sinaloa</option>
+    				</select>
+					</td>
+
+
+					<td>
+						
+						<input type="text" name="fecha" id="fecha" placeholder="Calle">
+					</td>
+					
+						
+				</tbody>
+			</table>
+
+			<table>
+				<thead>
+					<tr>
+						<th style="text-align: left;">Número de Casa</th>
+						<th style="text-align: left;">Colonia</th>
+						<th style="text-align: left;">E-mail</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>
+							<input type="number" name="numero" id="numero" placeholder="Número de Casa">
+						</td>
+						<td>
+							<input type="text" name="colonia" id="colonia" placeholder="Colonia">
+						</td>
+						<td>
+							<input type="email" name="correo" id="correo" placeholder="E-mail">
+						</td>
+					</tr>
+				</tbody>
+			</table>
+
+			<table>
+				<thead>
+					<tr>
+						<th style="text-align: left;">R.F.C</th>
+						<th style="text-align: left;">C.P</th>
+						
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>
+							<input type="text" name="errefece" id="errefece" placeholder="R.F.C">
+						</td>
+						<td>
+							<input type="text" name="codigo" id="codigo" placeholder="C.P">
+						</td>
+						<td>
+							<input type="checkbox" name="acepto" id="acepto" value="1">
+							<label for="acepto">Acepto terminos y condiciones</label><br/>
+							<input type="submit" name="enviar" id="enviar" placeholder="Enviar">
+							<input type="reset" name="restablecer" id="restablecer" placeholder="Reestablecer">
+						</td>
+						<td>
+							<!--
+							<input type="reset" name="restablecer" id="restablecer" placeholder="Reestablecer">
+							-->
+
+						</td>
+					</tr>
+				</tbody>
+			</table>
+
+		</fieldset>
+	</form>
+	<footer style="text-align: right;">Marzo 2025, S.L.P.</footer>
+</body>
+</html>
