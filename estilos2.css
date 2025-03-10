@@ -1,0 +1,24 @@
+ul{
+	list-style-type: none;
+	width: 30%;
+	margin: 0px;
+	padding: 0px;
+
+	
+}
+li a{
+	background-color: rosybrown;
+	color: black;
+	display: block;
+	padding: 16px;
+	text-decoration: none;
+}
+li a:hover{
+	background-color: saddlebrown;
+}
+
+li .activo{
+	background-color: #eec022;
+	color: white;
+}
+
