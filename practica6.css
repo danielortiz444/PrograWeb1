@@ -1,0 +1,144 @@
+
+.josefin-sans-<uniquifier> {
+  font-family: "Josefin Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+}
+
+ body {
+            font-family: Josefin Sans, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #bfb9b9;
+            background-image: ;
+        }
+.top-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background: #666;
+            color: white;
+        }
+.top-bar nav a {
+            color: white;
+            margin: 0 10px;
+            text-decoration: none;
+        }
+.banner {
+             font-family: Josefin Sans, sans-serif;
+            background: url('IMG/image.png') no-repeat center center/cover;
+            text-align: center;
+            padding: 50px;
+            color: white;
+        }
+.search-bar {
+            margin-top: 10px;
+            border-radius: 10px;
+            background-position: 2px 2px;
+            transition-delay: 1s;
+            transition: width 0.4s ease-in-out; 
+        }
+.search-bar input {
+    width: 150px;
+        padding: 10px;
+        box-sizing:border-box;
+        border: 2px solid lightgray;
+        border-radius: 10px;
+        margin: 5px;
+        line-height: 14px;
+        
+        background-repeat: no-repeat;
+        background-position: 8px 8px;
+        transition-delay: 1s;
+        transition: width 0.4s ease-in-out; 
+        }
+.search-bar input:focus{
+    width: 200px;
+}
+.search-bar button {
+            padding: 5px;
+            border-radius: 10px;
+            background: orange;
+            border: none;
+            cursor: pointer;
+        }
+.content-table {
+            width: 100%;
+            margin: 20px auto;
+            border-collapse: collapse;
+        }
+.content-table td {
+            padding: 10px;
+            vertical-align: top;
+        }
+.sidebar {
+            width: 20%;
+            background: #ddd;
+            padding: 10px;
+        }
+.category {
+        font-family: Josefin Sans, sans-serif;
+            padding: 10px;
+            border-radius: 10px;
+            display: block;
+            padding: 10px;
+            margin: 5px 0;
+            background: white;
+            border: none;
+            cursor: pointer;
+            text-align: left;
+            width: 100%;
+        }
+.active {
+            background: orange;
+            color: white;
+        }
+.category:hover{
+            padding: 10px;
+            border-radius: 10px;
+            display: block;
+            padding: 10px;
+            margin: 5px 0;
+            background: white;
+            border: none;
+            cursor: pointer;
+            text-align: left;
+            width: 100%;
+            background: orange;
+        }
+.active:hover{
+            background: black;
+            color: white;
+        }
+
+.products {
+            width: 75%;
+            text-align: center;
+        }
+.product {
+            display: inline-block;
+            background: white;
+            padding: 10px;
+            margin: 10px;
+            text-align: center;
+            border-radius: 5px;
+            width: 200px;
+        }
+.product img {
+            width: 100px;
+            height: auto;
+        }
+.add {
+            background: orange;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+        .add:hover{
+            background: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
