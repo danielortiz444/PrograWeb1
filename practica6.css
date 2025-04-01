@@ -28,7 +28,7 @@
         }
 .banner {
              font-family: Josefin Sans, sans-serif;
-            background: url('image.png') no-repeat center center/cover;
+            background: url('IMG/image.png') no-repeat center center/cover;
             text-align: center;
             padding: 50px;
             color: white;
@@ -123,7 +123,7 @@
             padding: 10px;
             margin: 10px;
             text-align: center;
-            border-radius: 5px;
+           border-radius: 5px;
             width: 200px;
         }
 .product img {
@@ -142,3 +142,20 @@
             padding: 5px 10px;
             cursor: pointer;
         }
+.valores {
+    width: 60%;  
+    margin: 20px auto;  
+    background: #f8f8f8;  
+    padding: 20px;  
+    border-radius: 10px;  /
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);  
+    text-align: center;  
+    line-height: 1.6;  
+    color: black;
+}
+
+.pie{
+    padding: 10px;
+    border: 1px white;
+    background: white;
+}
