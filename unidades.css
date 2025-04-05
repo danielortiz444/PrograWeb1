@@ -1,0 +1,57 @@
+:root {
+  font-size: 16px; /* Base para rem */
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+header {
+  background-color: #0066cc;
+  color: white;
+  padding: 2em; /* relativa al font-size del elemento padre */
+  text-align: center;
+}
+
+main {
+  padding: 2rem; /* relativa al font-size de :root */
+}
+
+section {
+  background-color: white;
+  margin-bottom: 2em;
+  padding: 1em;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+.absoluta {
+  width: 400px; /* absoluta */
+  height: 200px;
+  border: 2px solid #333;
+  margin-bottom: 1rem;
+}
+
+.relativa {
+  width: 50%; /* relativa al contenedor */
+  height: 30vh; /* relativa al alto del viewport */
+  background-color: #cceeff;
+  font-size: 1.5em; /* relativa al padre */
+  padding: 2vw; /* relativa al ancho del viewport */
+}
+
+footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+}
