@@ -4,11 +4,12 @@ body {
     padding: 20px;
     background-color: lightsalmon;
 }
-
 .boton-container {
     text-align: center;
     margin: 20px 0;
+    cursor: pointer;
 }
+
 
 .boton {
     background-color: lightblue;
@@ -18,7 +19,6 @@ body {
     border-radius: 4px;
     cursor: pointer;
     font-size: 16px;
-    color: white;
 }
 
 .boton:hover {
@@ -31,19 +31,12 @@ body {
     justify-content: space-around;
     flex-wrap: wrap;
     margin-top: 20px;
-    opacity: 1;
-    transition: opacity 0.3s ease;
-}
-
-.galeria-oculta {
-    opacity: 0;
-    height: 0;
-    overflow: hidden;
-    margin-top: 0;
+    visibility: visible; /* Estado inicial */
+    transition: visibility 0.3s ease;
 }
 
 .imagen {
-    width: 23%; 
+    width: 23%;
     margin: 5px;
     box-sizing: border-box;
 }
@@ -52,11 +45,8 @@ body {
     width: 100%;
     height: auto;
     border-radius: 5px;
-    border-color: silver;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease;
 }
-
 
 .leibel {
     margin-left: 10px;
