@@ -35,11 +35,11 @@ body {
     transition: opacity 0.3s ease;
 }
 
-
-.boton:hover .galeria {
+.galeria-oculta {
     opacity: 0;
     height: 0;
     overflow: hidden;
+    margin-top: 0;
 }
 
 .imagen {
@@ -52,12 +52,9 @@ body {
     width: 100%;
     height: auto;
     border-radius: 5px;
+    border-color: silver;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     transition: transform 0.3s ease;
-}
-
-.imagen img:hover {
-    transform: scale(1.05);
 }
 
 
