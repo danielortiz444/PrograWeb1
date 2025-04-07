@@ -1,0 +1,67 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: lightsalmon;
+}
+
+.boton-container {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.boton {
+    background-color: lightblue;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    color: white;
+}
+
+.boton:hover {
+    background-color: blue;
+}
+
+
+.galeria {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+
+.boton:hover ~ .galeria,
+.boton-container:hover .galeria {
+    opacity: 0;
+    height: 0;
+    overflow: hidden;
+}
+
+.imagen {
+    width: 23%; 
+    margin: 5px;
+    box-sizing: border-box;
+}
+
+.imagen img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.imagen img:hover {
+    transform: scale(1.05);
+}
+
+/* Estilo para el label del botón */
+.leibel {
+    margin-left: 10px;
+    font-size: 16px;
+}
