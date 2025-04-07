@@ -19,6 +19,10 @@
             <nav>
                 <a href="#">HOME</a>
                 <a href="#">CARRITO</a>
+                <div id="mini-cart" style="display: none; position: absolute; top: 60px; right: 150px; background: white; border: 1px solid #ccc; padding: 10px; width: 200px; box-shadow: 0 0 10px rgba(0,0,0,0.2); z-index: 999;">
+                    <p><strong>🛒 Carrito</strong></p>
+                    <ul id="cart-items" style="list-style: none; padding-left: 0;"></ul>
+                </div>
                 <a href="#">TUS ORDENES</a>
                 <a href="#historia">ACERCA DE</a>
                 <a href="#contacto">CONTACTO</a>
@@ -144,6 +148,11 @@
         </tr> 
         </table> 
     </section> 
+    <section class="mapa">
+        <h2 style="text-align: center;">Nuestras Instalaciones</h2>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d22484.271244880485!2d5.805159922911774!3d45.21676649402183!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x478a5f59ad45e1bd%3A0xf09edefa3ebb674f!2s26%20Av.%20Jean%20Kuntzmann%2C%2038330%20Montbonnot-Saint-Martin%2C%20Francia!5e0!3m2!1ses-419!2smx!4v1743987390531!5m2!1ses-419!2smx" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+    </section>
 <footer class="pie"> 
     <h3 style="text-align:
         center;">Pagina Desarrollada para la materia de Programacion Web 1
@@ -156,6 +165,32 @@
             Francia<br/>
         </p> 
         </footer> 
+      <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const cart = document.getElementById("mini-cart");
+        const cartItems = document.getElementById("cart-items");
+        const addButtons = document.querySelectorAll(".add");
+
+        addButtons.forEach(button => {
+            button.addEventListener("click", function () {
+                const paragraphs = this.parentElement.querySelectorAll("p");
+                let productName = "";
+                paragraphs.forEach(p => {
+                    if (!p.classList.contains("price") && productName === "") {
+                        productName = p.textContent;
+                    }
+                });
+
+                if (productName) {
+                    const li = document.createElement("li");
+                    li.textContent = productName;
+                    cartItems.appendChild(li);
+                    cart.style.display = "block";
+                }
+            });
+        });
+    });
+</script>
 
     </body> 
 </html>
