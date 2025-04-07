@@ -10,7 +10,7 @@
 <h1 style="text-align: center;">Examen práctico Parcial 2</h1>
 <h2 style="text-align: center;">Nombre del alumno(a): Ortiz Castro Juan Daniel</h2>
 
-<div class="boton-container">
+<div class="boton-contenedor" onmouseover="ocultar()" onmouseout="mostrar()>
     <input type="button" id="mostrar" class="boton" value="Galeria de Imagenes"/>
     <label for="mostrar" class="leibel"></label>
 </div>
@@ -29,5 +29,13 @@
         <img src="imagen4.jpg" alt="Paisaje 4">
     </div>
 </div>
+ <script type="text/javascript">
+    function ocultar(){
+        document.getElementById('galeria').style.visibility = "hidden";
+    }
+    function mostrar(){
+        document.getElementById('galeria').style.visibility = "visible";
+    }
+</script>
 </body>
 </html>
