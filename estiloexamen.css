@@ -35,8 +35,8 @@ body {
     transition: opacity 0.3s ease;
 }
 
-.boton:hover ~ .galeria,
-.boton-container:hover .galeria {
+
+.boton:hover .galeria {
     opacity: 0;
     height: 0;
     overflow: hidden;
@@ -60,7 +60,7 @@ body {
     transform: scale(1.05);
 }
 
-/* Estilo para el label del botón */
+
 .leibel {
     margin-left: 10px;
     font-size: 16px;
