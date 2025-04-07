@@ -31,8 +31,6 @@ body {
     justify-content: space-around;
     flex-wrap: wrap;
     margin-top: 20px;
-    visibility: visible; /* Estado inicial */
-    transition: visibility 0.3s ease;
 }
 
 .imagen {
@@ -46,9 +44,9 @@ body {
     height: auto;
     border-radius: 5px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+     transition: transform 0.3s ease;
 }
 
 .leibel {
-    margin-left: 10px;
-    font-size: 16px;
+    transform: scale(1.05);
 }
