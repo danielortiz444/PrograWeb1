@@ -15,7 +15,7 @@
     <label for="mostrar" class="leibel"></label>
 </div>
 
-<div class="galeria">
+<div class="galeria" id="galeria">
     <div class="imagen">
         <img src="imagen1.jfif" alt="Paisaje 1">
     </div>
@@ -29,12 +29,13 @@
         <img src="imagen4.jpg" alt="Paisaje 4">
     </div>
 </div>
- <script type="text/javascript">
+
+<script type="text/javascript">
     function ocultar(){
-        document.getElementById('galeria').style.visibility = "none";
+        document.getElementById('galeria').style.display = "none";
     }
     function mostrar(){
-        document.getElementById('galeria').style.visibility = "flex";
+        document.getElementById('galeria').style.display = "flex";
     }
 </script>
 </body>
