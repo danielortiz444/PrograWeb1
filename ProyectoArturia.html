@@ -4,6 +4,62 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Arturia</title>
+    <script type="text/javascript" src="js/jquery/jquery-1.7.1.min.js"></script>
+	<script type="text/javascript" src="js/jquery/jquery-ui-1.8.17.custom.min.js"></script>
+	<script type="text/javascript" src="jspdf.js"></script>
+
+	<script type="text/javascript" src="jspdf.plugin.addimage.js"></script>
+
+	<script type="text/javascript" src="jspdf.plugin.standard_fonts_metrics.js"></script>
+	<script type="text/javascript" src="jspdf.plugin.split_text_to_size.js"></script>
+	<script type="text/javascript" src="jspdf.plugin.from_html.js"></script>
+	<script type="text/javascript">
+function generarCotizacion() {
+    var nombre = $.trim($("#nombre").val());
+    var correo = $.trim($("#correo").val());
+    var producto = $("#producto option:selected").text();
+    var precioUnitario = parseFloat($("#producto").val());
+    var cantidad = parseInt($("#cantidad").val());
+    var envio = parseFloat($("#envio").val());
+
+    if (!nombre || !correo || isNaN(precioUnitario) || isNaN(cantidad) || cantidad <= 0) {
+        alert("Por favor completa todos los campos correctamente.");
+        return;
+    }
+
+    var subtotal = precioUnitario * cantidad;
+    var iva = subtotal * 0.16;
+    var total = subtotal + iva + envio;
+
+    var mensaje = "Cotización generada para " + nombre + ":\n\n" +
+        "Producto: " + producto + "\n" +
+        "Cantidad: " + cantidad + "\n" +
+        "Subtotal: $" + subtotal.toFixed(2) + "\n" +
+        "IVA (16%): $" + iva.toFixed(2) + "\n" +
+        "Envío: $" + envio.toFixed(2) + "\n" +
+        "Total: $" + total.toFixed(2);
+
+    alert(mensaje);
+
+    // Crear PDF
+    var doc = new jsPDF();
+    doc.setFont("helvetica");
+    doc.setFontSize(16);
+    doc.text(20, 20, "Comprobante de Cotización - Arturia");
+
+    doc.setFontSize(12);
+    doc.text(20, 40, "Nombre: " + nombre);
+    doc.text(20, 50, "Correo: " + correo);
+    doc.text(20, 60, "Producto: " + producto);
+    doc.text(20, 70, "Cantidad: " + cantidad);
+    doc.text(20, 80, "Subtotal: $" + subtotal.toFixed(2));
+    doc.text(20, 90, "IVA (16%): $" + iva.toFixed(2));
+    doc.text(20, 100, "Envío: $" + envio.toFixed(2));
+    doc.text(20, 110, "Total: $" + total.toFixed(2));
+
+    doc.save("cotizacion_arturia.pdf");
+}
+</script>
     <link rel="stylesheet" href="practica6.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -237,6 +293,37 @@
         <a href="https://www.youtube.com/@ArturiaOfficial" target="_blank" style="margin: 0 15px; text-decoration: none;">📺 YouTube</a>
     </div>
 </section>
+
+    <section id="cotizacion" style="padding: 40px; background: #fff;">
+    <h2 style="text-align: center;">🧾 Solicita tu Cotización</h2>
+    <form id="formCotizacion" style="max-width: 500px; margin: auto;">
+        <label>Nombre completo:</label>
+        <input type="text" id="nombre" required style="width: 100%; padding: 10px; margin-bottom: 10px;">
+
+        <label>Correo electrónico:</label>
+        <input type="email" id="correo" required style="width: 100%; padding: 10px; margin-bottom: 10px;">
+
+        <label>Producto:</label>
+        <select id="producto" required style="width: 100%; padding: 10px; margin-bottom: 10px;">
+            <option value="">-- Selecciona --</option>
+            <option value="2000">MiniLab 3 ($2,000)</option>
+            <option value="3000">MicroFreak ($3,000)</option>
+            <option value="2400">MiniFuse 1 ($2,400)</option>
+        </select>
+
+        <label>Cantidad:</label>
+        <input type="number" id="cantidad" min="1" required style="width: 100%; padding: 10px; margin-bottom: 10px;">
+
+        <label>Tipo de Envío:</label>
+        <select id="envio" style="width: 100%; padding: 10px; margin-bottom: 10px;">
+            <option value="0">Estándar (gratis)</option>
+            <option value="150">Express ($150)</option>
+        </select>
+
+        <button type="button" onclick="generarCotizacion()" style="background: orange; color: white; padding: 10px 20px; border: none; cursor: pointer;">Generar PDF</button>
+    </form>
+</section>
+
 <footer class="pie"> 
     <h3 style="text-align:
         center;">Pagina Desarrollada para la materia de Programacion Web 1
