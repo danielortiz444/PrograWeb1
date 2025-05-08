@@ -5,14 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Arturia</title>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.debug.js"></script>
-	<script type="text/javascript">
+	<script>
 function generarCotizacion() {
-    var nombre = $.trim($("#nombre").val());
-    var correo = $.trim($("#correo").val());
-    var producto = $("#producto option:selected").text();
-    var precioUnitario = parseFloat($("#producto").val());
-    var cantidad = parseInt($("#cantidad").val());
-    var envio = parseFloat($("#envio").val());
+    var nombre = document.getElementById("nombre").value.trim();
+    var correo = document.getElementById("correo").value.trim();
+    var productoSelect = document.getElementById("producto");
+    var productoTexto = productoSelect.options[productoSelect.selectedIndex].text;
+    var precioUnitario = parseFloat(productoSelect.value);
+    var cantidad = parseInt(document.getElementById("cantidad").value);
+    var envio = parseFloat(document.getElementById("envio").value);
 
     if (!nombre || !correo || isNaN(precioUnitario) || isNaN(cantidad) || cantidad <= 0) {
         alert("Por favor completa todos los campos correctamente.");
@@ -23,35 +24,27 @@ function generarCotizacion() {
     var iva = subtotal * 0.16;
     var total = subtotal + iva + envio;
 
-    var mensaje = "Cotización generada para " + nombre + ":\n\n" +
-        "Producto: " + producto + "\n" +
-        "Cantidad: " + cantidad + "\n" +
-        "Subtotal: $" + subtotal.toFixed(2) + "\n" +
-        "IVA (16%): $" + iva.toFixed(2) + "\n" +
-        "Envío: $" + envio.toFixed(2) + "\n" +
-        "Total: $" + total.toFixed(2);
+    alert(
+        `Cotización generada:\n\nProducto: ${productoTexto}\nCantidad: ${cantidad}\nSubtotal: $${subtotal.toFixed(2)}\nIVA: $${iva.toFixed(2)}\nEnvío: $${envio}\nTotal: $${total.toFixed(2)}`
+    );
 
-    alert(mensaje);
-
-    // Crear PDF
     var doc = new jsPDF();
     doc.setFont("helvetica");
     doc.setFontSize(16);
     doc.text(20, 20, "Comprobante de Cotización - Arturia");
-
     doc.setFontSize(12);
-    doc.text(20, 40, "Nombre: " + nombre);
-    doc.text(20, 50, "Correo: " + correo);
-    doc.text(20, 60, "Producto: " + producto);
-    doc.text(20, 70, "Cantidad: " + cantidad);
-    doc.text(20, 80, "Subtotal: $" + subtotal.toFixed(2));
-    doc.text(20, 90, "IVA (16%): $" + iva.toFixed(2));
-    doc.text(20, 100, "Envío: $" + envio.toFixed(2));
-    doc.text(20, 110, "Total: $" + total.toFixed(2));
-
+    doc.text(20, 40, `Nombre: ${nombre}`);
+    doc.text(20, 50, `Correo: ${correo}`);
+    doc.text(20, 60, `Producto: ${productoTexto}`);
+    doc.text(20, 70, `Cantidad: ${cantidad}`);
+    doc.text(20, 80, `Subtotal: $${subtotal.toFixed(2)}`);
+    doc.text(20, 90, `IVA: $${iva.toFixed(2)}`);
+    doc.text(20, 100, `Envío: $${envio}`);
+    doc.text(20, 110, `Total: $${total.toFixed(2)}`);
     doc.save("cotizacion_arturia.pdf");
 }
 </script>
+
     <link rel="stylesheet" href="practica6.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
