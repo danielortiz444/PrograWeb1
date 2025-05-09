@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Diagnóstico</title>
+    <link rel="stylesheet" href="FormularioCalif.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Formulario de Diagnóstico sobre Tecnología</h1>
+        <form id="diagnosticForm">
+            <label for="question1">1. ¿Qué es una computadora portátil?</label><br/>
+            <input type="radio" name="q1" value="1"> Es un dispositivo móvil<br/>
+            <input type="radio" name="q1" value="0"> Es un dispositivo de escritorio<br/>
+            
+            <label for="question2">2. ¿Cuál es la diferencia entre RAM y ROM?</label><br/>
+            <input type="radio" name="q2" value="1"> RAM es volátil, ROM no lo es<br/>
+            <input type="radio" name="q2" value="0"> RAM es permanente, ROM no lo es<br/>
+
+            <label for="question3">3. ¿Qué hace el sistema operativo?</label><br/>
+            <input type="radio" name="q3" value="1"> Gestiona recursos y facilita la interacción<br/>
+            <input type="radio" name="q3" value="0"> Gestiona únicamente la conexión a internet<br><br/>
+            
+            <button type="button" onclick="evaluaRespuestas()">Evaluar Respuestas</button>
+        </form>
+
+        <div id="result"></div>
+
+        <canvas id="scoreChart" width="400" height="200"></canvas>
+        <button id="desPDF">Generar PDF</button>
+    </div>
+
+    <script src="CalifJs.js"></script>
+</body>
+</html>
