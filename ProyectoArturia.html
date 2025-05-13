@@ -290,12 +290,9 @@ function generarCotizacion() {
         <input type="email" id="correo" required style="width: 100%; padding: 10px; margin-bottom: 10px;">
 
         <label>Producto:</label>
-        <select id="producto" required style="width: 100%; padding: 10px; margin-bottom: 10px;">
-            <option value="">-- Selecciona --</option>
-            <option value="2000">MiniLab 3 ($2,000)</option>
-            <option value="3000">MicroFreak ($3,000)</option>
-            <option value="2400">MiniFuse 1 ($2,400)</option>
-        </select>
+       <select id="producto" required style="width: 100%; padding: 10px; margin-bottom: 10px;">
+    <option value="">-- Selecciona un producto --</option>
+	</select>
 
         <label>Cantidad:</label>
         <input type="number" id="cantidad" min="1" required style="width: 100%; padding: 10px; margin-bottom: 10px;">
@@ -368,5 +365,26 @@ function initLandbot() {
   }
 }
 </script>
+	<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const select = document.getElementById("producto");
+    const productos = document.querySelectorAll(".product");
+
+    productos.forEach(producto => {
+        const nombre = producto.querySelector("p").textContent.trim();
+        const precioTexto = producto.querySelector(".price")?.textContent || "";
+        const match = precioTexto.replace(/[^\d]/g, "");
+        const precio = parseInt(match, 10);
+
+        if (nombre && !isNaN(precio)) {
+            const option = document.createElement("option");
+            option.value = precio;
+            option.textContent = `${nombre} ($${precio.toLocaleString()} MXN)`;
+            select.appendChild(option);
+        }
+    });
+});
+</script>
+	
     </body> 
 </html>
