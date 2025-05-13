@@ -73,9 +73,10 @@ function generarCotizacion() {
         <div class="banner">
             <h1>DESCUBRE EL NUEVO ARTURIA ASTROLAB</h1>
             <div class="search-bar">
-                <input type="text" placeholder="BUSQUEDA">
-                <button>&#128269;</button>
-            </div>
+    <input type="text" id="busquedaInput" placeholder="BUSQUEDA">
+    <button onclick="buscarProducto()">🔍</button>
+	</div>
+
         </div>
     </header>
 <section style="text-align: center; padding: 40px 20px;">
@@ -385,6 +386,30 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 </script>
-	
+	<script>
+function buscarProducto() {
+    const textoBusqueda = document.getElementById("busquedaInput").value.trim().toLowerCase();
+    const productos = document.querySelectorAll(".product");
+
+    let encontrado = false;
+
+    productos.forEach(producto => {
+        const nombre = producto.querySelector("p")?.textContent.toLowerCase();
+
+        if (nombre && nombre.includes(textoBusqueda)) {
+            producto.scrollIntoView({ behavior: "smooth", block: "center" });
+            producto.style.border = "2px solid orange"; // resaltado
+            setTimeout(() => producto.style.border = "", 2000);
+            encontrado = true;
+            return;
+        }
+    });
+
+    if (!encontrado) {
+        alert("Producto no encontrado.");
+    }
+}
+</script>
+
     </body> 
 </html>
