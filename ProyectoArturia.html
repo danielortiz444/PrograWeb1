@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Arturia</title>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.debug.js"></script>
+<!--Funcion para generar una cotizacion y crear PDF -->	
 	<script>
 function generarCotizacion() {
     var nombre = document.getElementById("nombre").value.trim();
@@ -283,6 +284,7 @@ function generarCotizacion() {
 
     <section id="cotizacion" style="padding: 40px; background: #fff;">
     <h2 style="text-align: center;">🧾 Solicita tu Cotización</h2>
+	    <!--Formulario de Cotizacion con Generacion de PDF -->	
     <form id="formCotizacion" style="max-width: 500px; margin: auto;">
         <label>Nombre completo:</label>
         <input type="text" id="nombre" required style="width: 100%; padding: 10px; margin-bottom: 10px;">
@@ -320,6 +322,7 @@ function generarCotizacion() {
             Francia<br/>
         </p> 
         </footer> 
+	<!--Inicializacion de Carrito y Select dinamico al cargar la pagina -->	
       <script>
     document.addEventListener("DOMContentLoaded", function () {
         const cart = document.getElementById("mini-cart");
@@ -386,6 +389,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 </script>
+	<!--Funcion de busqueda de productos por nombre -->	
 	<script>
 function buscarProducto() {
     const textoBusqueda = document.getElementById("busquedaInput").value.trim().toLowerCase();
